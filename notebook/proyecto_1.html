@@ -7811,20 +7811,13 @@ Universidad del Rosario</p>
 </div>
 </div>
 </div>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=8fc99973">
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=02e6c89c">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h2 id="Tabla-de-contenido">Tabla de contenido<a class="anchor-link" href="#Tabla-de-contenido">¶</a></h2><ul>
-<li><a href="proyecto_1.ipynb#1-introducci%C3%B3n">Introducción</a></li>
-<li><a href="proyecto_1.ipynb#2-importacion-del-dataset">Importación del dataset</a></li>
-<li><a href="#3-eda">EDA</a></li>
-<li><a href="#4-modelos">Modelos</a></li>
-<li><a href="#5-resultados">Resultados</a></li>
-<li><a href="#6-conclusiones">Conclusiones</a></li>
-</ul>
+<hr/>
 </div>
 </div>
 </div>
@@ -7835,6 +7828,7 @@ Universidad del Rosario</p>
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<p><a id="1-introducción"></a></p>
 <h2 id="1.-Introducci%C3%B3n">1. Introducción<a class="anchor-link" href="#1.-Introducci%C3%B3n">¶</a></h2><p>El riesgo crediticio es uno de los principales problemas que enfrentan las instituciones financieras, ya que implica la posibilidad de que una persona no cumpla con sus obligaciones de pago. Poder anticipar este tipo de situaciones es clave para reducir pérdidas y mejorar la toma de decisiones.</p>
 <p>En este proyecto se utiliza el dataset <strong>"Give Me Some Credit"</strong> con el objetivo de predecir si una persona tendrá dificultades financieras en los próximos dos años. Este problema se aborda como una tarea de <strong>clasificación binaria</strong>, donde el modelo debe identificar si un cliente presenta riesgo de incumplimiento o no.</p>
 <p>Para resolver este problema se desarrolla un flujo completo de <strong>Machine Learning</strong>, que incluye análisis exploratorio de datos (EDA), tratamiento de valores faltantes y outliers, implementación de modelos de clasificación como <strong>k-NN</strong> y <strong>Regresión Logística</strong>, así como la optimización de hiperparámetros mediante <strong>Grid Search</strong> y validación cruzada.</p>
@@ -7849,7 +7843,8 @@ Universidad del Rosario</p>
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h2 id="2.-Importacion-del-dataset">2. Importacion del dataset<a class="anchor-link" href="#2.-Importacion-del-dataset">¶</a></h2>
+<p><a id="2-importación-del-dataset"></a></p>
+<h2 id="2.-Importaci%C3%B3n-del-dataset">2. Importación del dataset<a class="anchor-link" href="#2.-Importaci%C3%B3n-del-dataset">¶</a></h2>
 </div>
 </div>
 </div>
@@ -7869,7 +7864,7 @@ Universidad del Rosario</p>
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [9]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [1]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-ipython3"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">pandas</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">pd</span>
@@ -7892,7 +7887,7 @@ Universidad del Rosario</p>
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [10]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [2]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-ipython3"><pre><span></span><span class="c1"># Cargamos el dataset</span>
@@ -7901,7 +7896,7 @@ Universidad del Rosario</p>
 <span class="n">test</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s2">"../input/cs-test.csv"</span><span class="p">)</span>
 
 <span class="c1"># ver primeras filas</span>
-<span class="n">train</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
+<span class="n">train</span><span class="o">.</span><span class="n">info</span><span class="p">()</span>
 </pre></div>
 </div>
 </div>
@@ -7911,120 +7906,29 @@ Universidad del Rosario</p>
 <div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
 </div>
 <div class="jp-OutputArea jp-Cell-outputArea">
-<div class="jp-OutputArea-child jp-OutputArea-executeResult">
-<div class="jp-OutputPrompt jp-OutputArea-prompt">Out[10]:</div>
-<div class="jp-RenderedHTMLCommon jp-RenderedHTML jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/html" tabindex="0">
-<div>
-<style scoped="">
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
-
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: right;
-    }
-</style>
-<table border="1" class="dataframe">
-<thead>
-<tr style="text-align: right;">
-<th></th>
-<th>Unnamed: 0</th>
-<th>SeriousDlqin2yrs</th>
-<th>RevolvingUtilizationOfUnsecuredLines</th>
-<th>age</th>
-<th>NumberOfTime30-59DaysPastDueNotWorse</th>
-<th>DebtRatio</th>
-<th>MonthlyIncome</th>
-<th>NumberOfOpenCreditLinesAndLoans</th>
-<th>NumberOfTimes90DaysLate</th>
-<th>NumberRealEstateLoansOrLines</th>
-<th>NumberOfTime60-89DaysPastDueNotWorse</th>
-<th>NumberOfDependents</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<th>0</th>
-<td>1</td>
-<td>1</td>
-<td>0.766127</td>
-<td>45</td>
-<td>2</td>
-<td>0.802982</td>
-<td>9120.0</td>
-<td>13</td>
-<td>0</td>
-<td>6</td>
-<td>0</td>
-<td>2.0</td>
-</tr>
-<tr>
-<th>1</th>
-<td>2</td>
-<td>0</td>
-<td>0.957151</td>
-<td>40</td>
-<td>0</td>
-<td>0.121876</td>
-<td>2600.0</td>
-<td>4</td>
-<td>0</td>
-<td>0</td>
-<td>0</td>
-<td>1.0</td>
-</tr>
-<tr>
-<th>2</th>
-<td>3</td>
-<td>0</td>
-<td>0.658180</td>
-<td>38</td>
-<td>1</td>
-<td>0.085113</td>
-<td>3042.0</td>
-<td>2</td>
-<td>1</td>
-<td>0</td>
-<td>0</td>
-<td>0.0</td>
-</tr>
-<tr>
-<th>3</th>
-<td>4</td>
-<td>0</td>
-<td>0.233810</td>
-<td>30</td>
-<td>0</td>
-<td>0.036050</td>
-<td>3300.0</td>
-<td>5</td>
-<td>0</td>
-<td>0</td>
-<td>0</td>
-<td>0.0</td>
-</tr>
-<tr>
-<th>4</th>
-<td>5</td>
-<td>0</td>
-<td>0.907239</td>
-<td>49</td>
-<td>1</td>
-<td>0.024926</td>
-<td>63588.0</td>
-<td>7</td>
-<td>0</td>
-<td>1</td>
-<td>0</td>
-<td>0.0</td>
-</tr>
-</tbody>
-</table>
-</div>
+<div class="jp-OutputArea-child">
+<div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
+<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain" tabindex="0">
+<pre>&lt;class 'pandas.DataFrame'&gt;
+RangeIndex: 150000 entries, 0 to 149999
+Data columns (total 12 columns):
+ #   Column                                Non-Null Count   Dtype  
+---  ------                                --------------   -----  
+ 0   Unnamed: 0                            150000 non-null  int64  
+ 1   SeriousDlqin2yrs                      150000 non-null  int64  
+ 2   RevolvingUtilizationOfUnsecuredLines  150000 non-null  float64
+ 3   age                                   150000 non-null  int64  
+ 4   NumberOfTime30-59DaysPastDueNotWorse  150000 non-null  int64  
+ 5   DebtRatio                             150000 non-null  float64
+ 6   MonthlyIncome                         120269 non-null  float64
+ 7   NumberOfOpenCreditLinesAndLoans       150000 non-null  int64  
+ 8   NumberOfTimes90DaysLate               150000 non-null  int64  
+ 9   NumberRealEstateLoansOrLines          150000 non-null  int64  
+ 10  NumberOfTime60-89DaysPastDueNotWorse  150000 non-null  int64  
+ 11  NumberOfDependents                    146076 non-null  float64
+dtypes: float64(4), int64(8)
+memory usage: 13.7 MB
+</pre>
 </div>
 </div>
 </div>
@@ -8070,7 +7974,44 @@ Universidad del Rosario</p>
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h2 id="3.-An%C3%A1lisis-Exploratorio-de-Datos-(EDA)-Juan">3. Análisis Exploratorio de Datos (EDA) Juan<a class="anchor-link" href="#3.-An%C3%A1lisis-Exploratorio-de-Datos-(EDA)-Juan">¶</a></h2>
+<p><a id="3-análisis-exploratorio-de-datos-eda"></a></p>
+<h2 id="3.-An%C3%A1lisis-Exploratorio-de-Datos-(EDA)">3. Análisis Exploratorio de Datos (EDA)<a class="anchor-link" href="#3.-An%C3%A1lisis-Exploratorio-de-Datos-(EDA)">¶</a></h2>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=a7b34b7c">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<p><a id="4-modelos"></a></p>
+<h2 id="4.-Implementaci%C3%B3n-de-Modelos">4. Implementación de Modelos<a class="anchor-link" href="#4.-Implementaci%C3%B3n-de-Modelos">¶</a></h2>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=8a6ec5ff">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<p><a id="5-resultados"></a></p>
+<h2 id="5.-Optimizaci%C3%B3n-de-Hiperpar%C3%A1metros-y-Validaci%C3%B3n">5. Optimización de Hiperparámetros y Validación<a class="anchor-link" href="#5.-Optimizaci%C3%B3n-de-Hiperpar%C3%A1metros-y-Validaci%C3%B3n">¶</a></h2>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=105fa98a">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<p><a id="6-conclusiones"></a></p>
+<h2 id="6.-M%C3%A9tricas-de-Evaluaci%C3%B3n-y-Decisi%C3%B3n">6. Métricas de Evaluación y Decisión<a class="anchor-link" href="#6.-M%C3%A9tricas-de-Evaluaci%C3%B3n-y-Decisi%C3%B3n">¶</a></h2>
 </div>
 </div>
 </div>
